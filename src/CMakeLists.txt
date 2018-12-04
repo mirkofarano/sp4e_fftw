@@ -5,6 +5,20 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
 
 ################################################################
+# FFTW option
+################################################################
+
+option (USE_FFTW "Use fftw3 library" ON)
+
+if (USE_FFTW)
+    set(FFTW_LIBRARY_PATH CACHE PATH "library where to search fftw3")
+    find_library (FFTW_LIBRARIES fftw3 /usr/lib/ ${FFTW_LIBRARY_PATH})
+    set(FFTW_INCLUDE_PATH CACHE PATH "path where to search fftw3 include files")
+    find_file(FFTW_INCLUDE fftw3.h /usr/include/ ${FFTW_INCLUDE_PATH})
+    include_directories(${FFTW_INCLUDE})
+endif (USE_FFTW)
+
+################################################################
 # libpart
 ################################################################
 
@@ -31,6 +45,14 @@ add_library(part
   compute_temperature.cc
   material_points_factory.cc 
   )
+  
+################################################################
+# FFTW linking
+################################################################
+
+if (USE_FFTW)
+    target_link_libraries (part ${FFTW_LIBRARIES})
+endif (USE_FFTW)
 
 add_executable(particles main.cc)
 target_link_libraries(particles part)
