@@ -19,13 +19,13 @@ private:
   /* ------------------------------------------------------------------------ */
 
 public:
-  SystemEvolution& createSimulation(const std::string& fname,
+  SystemEvolution &createSimulation(const std::string &fname,
                                     Real timestep) override;
 
   std::unique_ptr<Particle> createParticle() override;
 
-  static ParticlesFactoryInterface& getInstance();
+  static ParticlesFactoryInterface &getInstance();
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__PLANETS_FACTORY__HH__
+#endif //__PLANETS_FACTORY__HH__

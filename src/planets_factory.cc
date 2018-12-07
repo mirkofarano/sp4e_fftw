@@ -10,12 +10,11 @@
 std::unique_ptr<Particle> PlanetsFactory::createParticle() {
 
   return std::make_unique<Planet>();
-
 }
 
 /* -------------------------------------------------------------------------- */
 
-SystemEvolution& PlanetsFactory::createSimulation(const std::string& fname,
+SystemEvolution &PlanetsFactory::createSimulation(const std::string &fname,
                                                   Real timestep) {
 
   this->system_evolution =
@@ -31,17 +30,15 @@ SystemEvolution& PlanetsFactory::createSimulation(const std::string& fname,
   this->system_evolution->addCompute(verlet);
 
   return *this->system_evolution;
-
 }
 
 /* -------------------------------------------------------------------------- */
 
-ParticlesFactoryInterface& PlanetsFactory::getInstance() {
+ParticlesFactoryInterface &PlanetsFactory::getInstance() {
 
   if (not ParticlesFactoryInterface::factory)
     ParticlesFactoryInterface::factory = new PlanetsFactory;
 
   return *factory;
-
 }
 /* -------------------------------------------------------------------------- */

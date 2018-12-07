@@ -1,6 +1,6 @@
 #include "compute_kinetic_energy.hh"
 /* -------------------------------------------------------------------------- */
 
-void ComputeKineticEnergy::compute(System& system) {}
+void ComputeKineticEnergy::compute(System &system) {}
 
 /* -------------------------------------------------------------------------- */

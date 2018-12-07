@@ -10,7 +10,7 @@ class ComputeGravity : public ComputeInteraction {
   // Virtual implementation
 public:
   //! Newton gravity implementation
-  void compute(System& system) override;
+  void compute(System &system) override;
 
   // Accessors
 public:
@@ -24,4 +24,4 @@ private:
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE_GRAVITY__HH__
+#endif //__COMPUTE_GRAVITY__HH__

@@ -10,7 +10,7 @@ class ComputeContact : public ComputeInteraction {
   // Virtual implementation
 public:
   //! Penalty contact implementation
-  void compute(System& system) override;
+  void compute(System &system) override;
 
   // Accessors
 public:
@@ -23,4 +23,4 @@ protected:
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE_CONTACT__HH__
+#endif //__COMPUTE_CONTACT__HH__

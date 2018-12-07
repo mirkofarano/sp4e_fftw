@@ -16,8 +16,8 @@ public:
   /* ------------------------------------------------------------------------ */
 public:
   //! Compute is pure virtual
-  virtual void compute(System& system) = 0;
+  virtual void compute(System &system) = 0;
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE__HH__
+#endif //__COMPUTE__HH__

@@ -1,9 +1,9 @@
 #include "compute_gravity.hh"
 #include <cmath>
 /* -------------------------------------------------------------------------- */
-void ComputeGravity::compute(System& system) {
+void ComputeGravity::compute(System &system) {
   // define a lambda function for newtonian gravity
-  auto newton_gravity = [this](Particle& par1, Particle& par2) {
+  auto newton_gravity = [this](Particle &par1, Particle &par2) {
     // compute the distance vector and the square of distance
     auto v_r = par2.getPosition() - par1.getPosition();
     auto r2 = v_r.squaredNorm();

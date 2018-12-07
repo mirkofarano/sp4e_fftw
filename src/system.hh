@@ -20,18 +20,18 @@ public:
   //! Remove particle from vector
   void removeParticle(UInt particle){};
   //! Get particle for specific id
-  Particle& getParticle(UInt i);
+  Particle &getParticle(UInt i);
   //! Add a particle to the system
-  void addParticle(const std::shared_ptr<Particle>& new_particle);
+  void addParticle(const std::shared_ptr<Particle> &new_particle);
   //! Get number of particles
   UInt getNbParticles();
 
   //! Iterator class to erase the unique pointer on Particle
   struct iterator : ParticleList::iterator {
-    iterator(const ParticleList::iterator& it) : ParticleList::iterator(it) {}
+    iterator(const ParticleList::iterator &it) : ParticleList::iterator(it) {}
 
     //! Access the underlying particle
-    Particle& operator*() { return *ParticleList::iterator::operator*(); }
+    Particle &operator*() { return *ParticleList::iterator::operator*(); }
   };
 
   // Iterators
@@ -45,4 +45,4 @@ protected:
 
 /* -------------------------------------------------------------------------- */
 
-#endif  //__SYSTEM__HH__
+#endif //__SYSTEM__HH__

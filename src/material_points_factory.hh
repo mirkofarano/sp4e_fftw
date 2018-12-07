@@ -2,8 +2,8 @@
 #define __MATERIAL_POINTS_FACTORY__HH__
 
 /* -------------------------------------------------------------------------- */
-#include "particles_factory_interface.hh"
 #include "material_point.hh"
+#include "particles_factory_interface.hh"
 /* -------------------------------------------------------------------------- */
 
 //! Factory for material points
@@ -18,13 +18,13 @@ private:
   /* Methods                                                                  */
   /* ------------------------------------------------------------------------ */
 public:
-  SystemEvolution& createSimulation(const std::string& fname,
-				    Real timestep) override;
+  SystemEvolution &createSimulation(const std::string &fname,
+                                    Real timestep) override;
 
   std::unique_ptr<Particle> createParticle() override;
 
-  static ParticlesFactoryInterface& getInstance();
+  static ParticlesFactoryInterface &getInstance();
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__MATERIAL_POINTS_FACTORY__HH__
+#endif //__MATERIAL_POINTS_FACTORY__HH__

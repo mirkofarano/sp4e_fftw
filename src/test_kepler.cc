@@ -22,7 +22,7 @@ protected:
       planets.push_back(p);
     }
 
-    for (auto& p : planets) {
+    for (auto &p : planets) {
       // std::cout << p << std::endl;
       system.addParticle(std::make_shared<Planet>(p));
     }
@@ -45,10 +45,10 @@ TEST_F(RandomPlanets, csv) {
   EXPECT_EQ(n_planets, s_fromfile.getNbParticles());
 
   for (UInt i = 0; i < n_planets; ++i) {
-    auto& part1 = system.getParticle(i);
-    auto& pos1 = part1.getPosition();
-    auto& part2 = s_fromfile.getParticle(i);
-    auto& pos2 = part2.getPosition();
+    auto &part1 = system.getParticle(i);
+    auto &pos1 = part1.getPosition();
+    auto &part2 = s_fromfile.getParticle(i);
+    auto &pos2 = part2.getPosition();
     for (UInt j = 0; j < 3; ++j) {
       ASSERT_NEAR(pos1[j], pos2[j], std::abs(pos1[j]) * 1e-12);
     }
@@ -75,7 +75,6 @@ protected:
     gravity = std::make_shared<ComputeGravity>();
     verlet = std::make_shared<ComputeVerletIntegration>(1.);
     verlet->addInteraction(this->gravity);
-
   }
 
   System system;
@@ -87,8 +86,8 @@ protected:
 
 /*****************************************************************/
 TEST_F(TwoPlanets, gravity_force) {
-  auto& p1 = system.getParticle(0);
-  auto& p2 = system.getParticle(1);
+  auto &p1 = system.getParticle(0);
+  auto &p2 = system.getParticle(1);
 
   p2.getVelocity()[1] = 1.2;
   p2.getPosition()[0] = 1.;
@@ -106,8 +105,8 @@ TEST_F(TwoPlanets, gravity_force) {
 
 /*****************************************************************/
 TEST_F(TwoPlanets, ellipsoid) {
-  auto& p1 = system.getParticle(0);
-  auto& p2 = system.getParticle(1);
+  auto &p1 = system.getParticle(0);
+  auto &p2 = system.getParticle(1);
 
   verlet->setDeltaT(5e-3);
   gravity->setG(1.);
@@ -129,20 +128,20 @@ TEST_F(TwoPlanets, ellipsoid) {
     max_dist = std::max(max_dist, dist);
   }
   Real excentricity = (max_dist - min_dist) / (max_dist + min_dist);
-  //std::cout << "excentricity:" << excentricity << std::endl;
+  // std::cout << "excentricity:" << excentricity << std::endl;
   ASSERT_LT(excentricity, 1.);
 }
 
 /*****************************************************************/
 TEST_F(TwoPlanets, circular) {
-  auto& p1 = system.getParticle(0);
-  auto& p2 = system.getParticle(1);
+  auto &p1 = system.getParticle(0);
+  auto &p2 = system.getParticle(1);
 
   CsvWriter writer("tmp_file");
   writer.compute(system);
-  
+
   verlet->setDeltaT(5e-3);
-  //verlet->setDeltaT(1e-8);
+  // verlet->setDeltaT(1e-8);
   gravity->setG(1.);
 
   p1.getForce()[1] = 1e-4;
@@ -155,7 +154,7 @@ TEST_F(TwoPlanets, circular) {
   for (UInt i = 0; i < 100000; ++i) {
     verlet->compute(system);
     auto dist = (p2.getPosition() - p1.getPosition()).squaredNorm();
-    //ASSERT_NEAR(dist, 1., 1e-10);
+    // ASSERT_NEAR(dist, 1., 1e-10);
     ASSERT_NEAR(dist, 1., 1e-1);
   }
 }

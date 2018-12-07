@@ -14,22 +14,22 @@ class ComputePotentialEnergy : public ComputeEnergy {
   /* ------------------------------------------------------------------------ */
 
 public:
-  ComputePotentialEnergy(ComputeInteraction& cForces);
+  ComputePotentialEnergy(ComputeInteraction &cForces);
 
   /* ------------------------------------------------------------------------ */
   /* Methods                                                                  */
   /* ------------------------------------------------------------------------ */
 
 public:
-  void compute(System& system) override;
+  void compute(System &system) override;
 
   /* ------------------------------------------------------------------------ */
   /* Members                                                                  */
   /* ------------------------------------------------------------------------ */
 
 protected:
-  ComputeInteraction& cForces;
+  ComputeInteraction &cForces;
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE_POTENTIAL_ENERGY__HH__
+#endif //__COMPUTE_POTENTIAL_ENERGY__HH__

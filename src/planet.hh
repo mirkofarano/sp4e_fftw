@@ -12,16 +12,16 @@ class Planet : public Particle {
   // Methods
 public:
   //! Get name
-  std::string& getName() { return name; }
+  std::string &getName() { return name; }
 
   // Inherited methods
 public:
-  void initself(std::istream& stream) override;
-  void printself(std::ostream& stream) const override;
+  void initself(std::istream &stream) override;
+  void printself(std::ostream &stream) const override;
 
 private:
   std::string name;
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__PLANET__HH__
+#endif //__PLANET__HH__

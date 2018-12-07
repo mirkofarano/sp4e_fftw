@@ -1,11 +1,10 @@
 #include "particles_factory_interface.hh"
 #include "planets_factory.hh"
 /* -------------------------------------------------------------------------- */
-ParticlesFactoryInterface& ParticlesFactoryInterface::getInstance() {
+ParticlesFactoryInterface &ParticlesFactoryInterface::getInstance() {
 
   return *factory;
-
 }
 
 /* -------------------------------------------------------------------------- */
-ParticlesFactoryInterface* ParticlesFactoryInterface::factory = nullptr;
+ParticlesFactoryInterface *ParticlesFactoryInterface::factory = nullptr;

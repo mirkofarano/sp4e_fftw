@@ -2,8 +2,8 @@
 #define __MY_TYPES_HH__
 
 /* -------------------------------------------------------------------------- */
-#include <iostream>
 #include <complex>
+#include <iostream>
 
 using UInt = unsigned int;
 using Real = double;

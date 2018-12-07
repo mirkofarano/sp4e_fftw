@@ -20,7 +20,7 @@ public:
   //! Set time step
   void setDeltaT(Real dt);
   //! Evolve positions and velocities
-  void compute(System& system) override;
+  void compute(System &system) override;
   //! Add an interaction to the computation of forces
   void addInteraction(std::shared_ptr<ComputeInteraction> interaction);
 
@@ -30,4 +30,4 @@ private:
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE_VERLET_INTEGRATION__HH__
+#endif //__COMPUTE_VERLET_INTEGRATION__HH__

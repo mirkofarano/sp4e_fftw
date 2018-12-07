@@ -2,14 +2,14 @@
 #include <cstdlib>
 #include <fstream>
 /* -------------------------------------------------------------------------- */
-CsvWriter::CsvWriter(const std::string& filename) : filename(filename) {}
+CsvWriter::CsvWriter(const std::string &filename) : filename(filename) {}
 
 /* -------------------------------------------------------------------------- */
-void CsvWriter::write(System& system) { this->compute(system); }
+void CsvWriter::write(System &system) { this->compute(system); }
 
 /* -------------------------------------------------------------------------- */
 
-void CsvWriter::compute(System& system) {
+void CsvWriter::compute(System &system) {
 
   std::ofstream os(filename.c_str());
 
@@ -26,5 +26,4 @@ void CsvWriter::compute(System& system) {
   }
 
   os.close();
-
 }

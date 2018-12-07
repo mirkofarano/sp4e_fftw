@@ -5,7 +5,6 @@
 
 /* -------------------------------------------------------------------------- */
 
-void ComputeTemperature::compute(System& system) {
-}
+void ComputeTemperature::compute(System &system) {}
 
 /* -------------------------------------------------------------------------- */

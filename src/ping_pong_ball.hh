@@ -12,16 +12,16 @@ class PingPongBall : public Particle {
 
 public:
   //! Get contact dissipation
-  Real& getContactDissipation() { return contact_dissipation; }
+  Real &getContactDissipation() { return contact_dissipation; }
   //! Get ball radius
-  Real& getRadius() { return radius; }
+  Real &getRadius() { return radius; }
 
-  void printself(std::ostream& stream) const override;
-  void initself(std::istream& sstr) override;
+  void printself(std::ostream &stream) const override;
+  void initself(std::istream &sstr) override;
 
 private:
   Real radius, contact_dissipation;
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__PING_PONG_BALL__HH__
+#endif //__PING_PONG_BALL__HH__

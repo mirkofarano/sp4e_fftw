@@ -22,9 +22,9 @@ public:
   //! Evolve all time steps
   void evolve();
   //! Add compute to list of computes
-  void addCompute(const std::shared_ptr<Compute>& compute);
+  void addCompute(const std::shared_ptr<Compute> &compute);
   //! Get the system object
-  System& getSystem();
+  System &getSystem();
 
   void setNSteps(UInt nsteps);
   void setDumpFreq(UInt freq);
@@ -39,4 +39,4 @@ protected:
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__SYSTEM_EVOLUTION__HH__
+#endif //__SYSTEM_EVOLUTION__HH__

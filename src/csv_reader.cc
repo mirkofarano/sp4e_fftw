@@ -3,12 +3,12 @@
 #include <fstream>
 #include <sstream>
 /* -------------------------------------------------------------------------- */
-CsvReader::CsvReader(const std::string& filename) : filename(filename) {}
+CsvReader::CsvReader(const std::string &filename) : filename(filename) {}
 /* -------------------------------------------------------------------------- */
-void CsvReader::read(System& system) { this->compute(system); }
+void CsvReader::read(System &system) { this->compute(system); }
 /* -------------------------------------------------------------------------- */
 
-void CsvReader::compute(System& system) {
+void CsvReader::compute(System &system) {
 
   std::ifstream is(filename.c_str());
   std::string line;
@@ -31,7 +31,6 @@ void CsvReader::compute(System& system) {
   }
 
   is.close();
-
 }
 
 /* -------------------------------------------------------------------------- */

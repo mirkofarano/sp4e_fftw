@@ -13,8 +13,8 @@ std::unique_ptr<Particle> MaterialPointsFactory::createParticle() {
 
 /* -------------------------------------------------------------------------- */
 
-SystemEvolution&
-MaterialPointsFactory::createSimulation(const std::string& fname,
+SystemEvolution &
+MaterialPointsFactory::createSimulation(const std::string &fname,
                                         Real timestep) {
 
   this->system_evolution =
@@ -37,7 +37,7 @@ MaterialPointsFactory::createSimulation(const std::string& fname,
 
 /* -------------------------------------------------------------------------- */
 
-ParticlesFactoryInterface& MaterialPointsFactory::getInstance() {
+ParticlesFactoryInterface &MaterialPointsFactory::getInstance() {
   if (not ParticlesFactoryInterface::factory)
     ParticlesFactoryInterface::factory = new MaterialPointsFactory;
 

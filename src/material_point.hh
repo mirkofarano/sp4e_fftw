@@ -11,17 +11,16 @@ class MaterialPoint : public Particle {
   /* ------------------------------------------------------------------------ */
 
 public:
+  void printself(std::ostream &stream) const override;
+  void initself(std::istream &sstr) override;
 
-  void printself(std::ostream& stream) const override;
-  void initself(std::istream& sstr) override;
+  Real &getTemperature() { return temperature; };
+  Real &getHeatRate() { return heat_rate; };
 
-  Real & getTemperature(){return temperature;};
-  Real & getHeatRate(){return heat_rate;};
-  
 private:
   Real temperature;
   Real heat_rate;
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__MATERIAL_POINT__HH__
+#endif //__MATERIAL_POINT__HH__

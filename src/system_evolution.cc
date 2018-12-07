@@ -14,7 +14,7 @@ void SystemEvolution::evolve() {
 
   for (UInt i = 0; i < nsteps; ++i) {
 
-    for (auto & compute : computes)
+    for (auto &compute : computes)
       compute->compute(*system);
 
     if (i % freq == 0) {
@@ -24,12 +24,11 @@ void SystemEvolution::evolve() {
       dumper.write(*system);
     }
   }
-
 }
 
 /* -------------------------------------------------------------------------- */
 
-void SystemEvolution::addCompute(const std::shared_ptr<Compute>& compute) {
+void SystemEvolution::addCompute(const std::shared_ptr<Compute> &compute) {
   computes.push_back(compute);
 }
 
@@ -38,5 +37,5 @@ void SystemEvolution::setNSteps(UInt nsteps) { this->nsteps = nsteps; }
 /* -------------------------------------------------------------------------- */
 void SystemEvolution::setDumpFreq(UInt freq) { this->freq = freq; }
 /* -------------------------------------------------------------------------- */
-System& SystemEvolution::getSystem() { return *system; }
+System &SystemEvolution::getSystem() { return *system; }
 /* -------------------------------------------------------------------------- */

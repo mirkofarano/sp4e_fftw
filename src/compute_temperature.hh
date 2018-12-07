@@ -10,9 +10,8 @@ class ComputeTemperature : public Compute {
   // Virtual implementation
 public:
   //! Penalty contact implementation
-  void compute(System& system) override;
-
+  void compute(System &system) override;
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE_TEMPERATURE__HH__
+#endif //__COMPUTE_TEMPERATURE__HH__

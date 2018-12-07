@@ -9,11 +9,11 @@
 class ComputeBoundary : public Compute {
   // Constructors/Destructors
 public:
-  ComputeBoundary(const Vector& xmin, const Vector& xmax);
+  ComputeBoundary(const Vector &xmin, const Vector &xmax);
 
   // Methods
 public:
-  void compute(System& system) override;
+  void compute(System &system) override;
 
   // Members
 protected:
@@ -21,4 +21,4 @@ protected:
 };
 
 /* -------------------------------------------------------------------------- */
-#endif  //__COMPUTE_BOUNDARY__HH__
+#endif //__COMPUTE_BOUNDARY__HH__

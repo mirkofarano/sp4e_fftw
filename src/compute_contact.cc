@@ -2,14 +2,12 @@
 #include "ping_pong_ball.hh"
 #include <cmath>
 /* -------------------------------------------------------------------------- */
-void ComputeContact::setPenalty(Real penalty) {
-  this->penalty = penalty;
-}
+void ComputeContact::setPenalty(Real penalty) { this->penalty = penalty; }
 /* -------------------------------------------------------------------------- */
-void ComputeContact::compute(System& system) {
-  auto penalty_contact = [this](Particle& par1, Particle& par2) {
-    auto& ppb1 = static_cast<PingPongBall&>(par1);
-    auto& ppb2 = static_cast<PingPongBall&>(par2);
+void ComputeContact::compute(System &system) {
+  auto penalty_contact = [this](Particle &par1, Particle &par2) {
+    auto &ppb1 = static_cast<PingPongBall &>(par1);
+    auto &ppb2 = static_cast<PingPongBall &>(par2);
 
     auto v_r = ppb2.getPosition() - ppb1.getPosition();
     auto r = std::sqrt(v_r.squaredNorm());
