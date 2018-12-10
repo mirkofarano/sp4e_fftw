@@ -11,6 +11,12 @@ class ComputeTemperature : public Compute {
 public:
   //! Penalty contact implementation
   void compute(System &system) override;
+  void setDeltaT(Real dt);
+  void setk(Real k);
+private:
+  Real dt;
+  // conductivity,
+  Real kappa = 1.;
 };
 
 /* -------------------------------------------------------------------------- */
