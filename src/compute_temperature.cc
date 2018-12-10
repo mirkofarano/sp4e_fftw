@@ -45,7 +45,7 @@ void ComputeTemperature::compute(System &system) {
   
   for (UInt i = 0; i<size; i++){
       for (UInt j = 0; i<size; i++){
-        T(i,j) = T(i,j) + dTdt(i,j);
+        T(i,j) = T(i,j) + dt*dTdt(i,j);
       }
   }
 
