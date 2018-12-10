@@ -43,7 +43,7 @@ TEST(FFT, inverse_transform) {
     int i = std::get<0>(entry);
     int j = std::get<1>(entry);
     auto &val = std::get<2>(entry);
-    val = cos(k * i);
+    val = cos(k * j);
   }
 
   Matrix<complex> res = FFT::itransform(m);
@@ -55,9 +55,9 @@ TEST(FFT, inverse_transform) {
     if (std::abs(val) > 1e-10)
       std::cout << i << "," << j << " = " << val << std::endl;
 
-    if (i == 1 && j == 0)
+    if (j == 1 && i == 0)
       ASSERT_NEAR(std::abs(val), N * N / 2, 1e-10);
-    else if (i == N - 1 && j == 0)
+    else if (j == N - 1 && i == 0)
       ASSERT_NEAR(std::abs(val), N * N / 2, 1e-10);
     else
       ASSERT_NEAR(std::abs(val), 0, 1e-10);
