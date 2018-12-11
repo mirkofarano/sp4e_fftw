@@ -68,7 +68,6 @@ inline Matrix<std::complex<int>> FFT::computeFrequencies(int size) {
     int kx = (i <= size / 2) ? i : i - size;
     int ky = (j <= size / 2) ? j : j - size;
     val = std::complex<int>(kx, ky);
-    std::cout << val << std::endl;
   }
 
   return m;

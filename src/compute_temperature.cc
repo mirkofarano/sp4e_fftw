@@ -34,18 +34,20 @@ void ComputeTemperature::compute(System &system) {
   T = FFT::transform(T);
   h = FFT::transform(h);
   
-  for (UInt i = 0; i<size; i++){
-      for (UInt j = 0; i<size; i++){
+  for (UInt j = 0; j<size; j++){
+      for (UInt i = 0; i<size; i++){
         double k = std::abs(K(i,j));
-        dTdt(i,j) = h(i,j) - kappa*T(i,j)*k*k;
+        dTdt(i,j) = h(i,j) - kappa*M_PI*M_PI*T(i,j)*k*k;
       }
   }
   
   dTdt = FFT::itransform(dTdt);
-  
-  for (UInt i = 0; i<size; i++){
-      for (UInt j = 0; i<size; i++){
+  T = FFT::itransform(T);
+  for (UInt j = 0; j<size; j++){
+      for (UInt i = 0; i<size; i++){
         T(i,j) = T(i,j) + dt*dTdt(i,j);
+        auto &p = static_cast<MaterialPoint &>(system.getParticle(j * size + i));
+        p.getTemperature() = T(i,j).real();
       }
   }
 

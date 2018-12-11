@@ -69,10 +69,13 @@ if (GTEST_FOUND)
 include_directories(${GTEST_INCLUDE_DIRS})
 add_executable(test_kepler test_kepler.cc)
 add_executable(test_fft test_fft.cc)
+add_executable(test_heat test_heat.cc)
 target_link_libraries(test_kepler part ${GTEST_BOTH_LIBRARIES} pthread)
 target_link_libraries(test_fft part ${GTEST_BOTH_LIBRARIES} ${FFTW_LIBRARIES} pthread)
+target_link_libraries(test_heat part ${GTEST_BOTH_LIBRARIES} pthread)
 gtest_discover_tests(test_kepler)
 gtest_discover_tests(test_fft)
+gtest_discover_tests(test_heat)
 endif()
 
 ################################################################
